@@ -20,15 +20,27 @@ namespace Vidly_MVC
                 );
 
             routes.MapRoute(
-                "GetMovies",
-                "Movies",
-                new { controller = "Movies", action = "MoviesPage" });
-
+                "MovieForm",
+                "Movies/New",
+                new { controller = "movies", action = "MovieForm", id = UrlParameter.Optional }
+                );
+            
             routes.MapRoute(
                 "customerIndex",
                 "customers",
                 new { controller = "Customers", action = "Index", id = UrlParameter.Optional }
                 );
+
+            routes.MapRoute(
+                "movieDetails",
+                "movies/Details/{id}",
+                new { controller = "movies", action ="Details", id = UrlParameter.Optional }
+                );
+
+            routes.MapRoute(
+                "GetMovies",
+                "Movies",
+                new { controller = "Movies", action = "Index" });
 
             routes.MapRoute(
                 name: "Default",
