@@ -22,7 +22,7 @@ namespace Vidly_MVC
             routes.MapRoute(
                 "MovieForm",
                 "Movies/New",
-                new { controller = "movies", action = "MovieForm", id = UrlParameter.Optional }
+                new { controller = "movies", action = "New", id = UrlParameter.Optional }
                 );
             
             routes.MapRoute(
