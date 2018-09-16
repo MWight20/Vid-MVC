@@ -10,16 +10,21 @@ namespace Vidly_MVC.Models
     {
         public int Id { get; set; }
 
+        [Required]
+        [StringLength(255)]
         public string Name { get; set; }
 
         [Display(Name = "Release Date")]
-        public string ReleaseDate { get; set; }
+        [DisplayFormat(DataFormatString = "{0: d MMM yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime ReleaseDate { get; set; }
 
         [Display(Name = "Date Added")]
-        public string DateAdded { get; set; }
+        public DateTime DateAdded { get; set; }
 
         [Display(Name = "Number In Stock")]
-        public int NumberInStock { get; set; }
+        [NuminStock1To20]
+        [Range(1,20)]
+        public byte NumberInStock { get; set; }
         
         public GenreType GenreType { get; set; }
 
