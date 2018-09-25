@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -21,9 +22,13 @@ namespace Vidly_MVC.Controllers.Api
         }
 
         // GET /api/movies
-        public IEnumerable<MovieDto> GetMovies()
+        public IHttpActionResult GetMovies()
         {
-            return _context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>);
+            var movieDtos = _context.Movies
+                .Include(c => c.GenreType)
+                .ToList()
+                .Select(Mapper.Map<Movie, MovieDto>);
+            return Ok(movieDtos);
         }
 
         // GET /api/movies/1
@@ -86,6 +91,7 @@ namespace Vidly_MVC.Controllers.Api
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
             _context.Movies.Remove(MovieInDb);
+            _context.SaveChanges();
         }
 
     }
