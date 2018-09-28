@@ -9,8 +9,10 @@ using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
+    
     public class CustomersController : Controller
     {
+
         private ApplicationDbContext _context;
 
         public CustomersController()
@@ -69,6 +71,7 @@ namespace Vidly.Controllers
             return RedirectToAction("Index", "Customers");
         }
 
+        
         public ViewResult Index()
         {
             //var customers = _context.Customers.Include(c => c.MembershipType).ToList();
@@ -86,7 +89,7 @@ namespace Vidly.Controllers
             return View(customer);
 
         }
-
+        
         public ActionResult Edit(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);

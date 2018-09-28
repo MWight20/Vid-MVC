@@ -12,7 +12,7 @@ namespace Vidly_MVC
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            /*
             routes.MapRoute(
                 "Details",
                 "customers/Details/{id}",
@@ -40,8 +40,8 @@ namespace Vidly_MVC
             routes.MapRoute(
                 "GetMovies",
                 "Movies",
-                new { controller = "Movies", action = "Index" });
-
+                new { controller = "Movies", action = "List" });
+                */
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
