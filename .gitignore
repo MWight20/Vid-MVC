@@ -11,7 +11,8 @@
 *.userprefs
 
 # Ignore appsettings
-Vidly-MVC/AppSettings.config/
+Vidly-MVC/ApplicationSettings.config
+ApplicationSettings.config
 
 # Build results
 [Dd]ebug/
