@@ -9,6 +9,7 @@ using Vidly_MVC.Models;
 
 namespace Vidly_MVC.Controllers.Api
 {
+    [Authorize(Roles = RoleName.CanManageMovies)]
     public class NewRentalsController : ApiController
     {
         // PURPOSE: assigning selected movies to a customer by assigning a new "rental" object. Each rental will be contained as an object

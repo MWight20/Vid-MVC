@@ -11,10 +11,12 @@ using Vidly_MVC.Models;
 
 namespace Vidly_MVC.Controllers.Api
 {
+    [Authorize(Roles = RoleName.CanManageMovies)]
     public class CustomersController : ApiController
     {
         private ApplicationDbContext _context;
 
+        // Constructor
         public CustomersController()
         {
             _context = new ApplicationDbContext();

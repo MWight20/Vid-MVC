@@ -28,12 +28,14 @@ namespace Vidly_MVC
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap-lumen.css",
-                      "~/Content/datatables/css/datatables.bootstrap.css",
-                      "~/Content/site.css",
-                      "~/Content/toastr.css",
-                      "~/Content/typeahead.css"
-                      ));
+                
+                "~/Content/bootstrap-lumen.css",
+                "~/Content/bootstrap-theme.css",
+                "~/Content/datatables/css/datatables.bootstrap.css",
+                "~/Content/site.css",
+                "~/Content/toastr.css",
+                "~/Content/typeahead.css"
+                ));
         }
     }
 }

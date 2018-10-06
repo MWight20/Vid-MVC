@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
-    
+    [Authorize( Roles = RoleName.CanManageMovies)]
     public class CustomersController : Controller
     {
 
@@ -76,6 +76,7 @@ namespace Vidly.Controllers
         {
             //var customers = _context.Customers.Include(c => c.MembershipType).ToList();
             return View();
+            
         }
 
 
